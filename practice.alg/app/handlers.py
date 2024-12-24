@@ -199,7 +199,7 @@ async def delete_schedule(callback: CallbackQuery):
 
 @router.message(lambda message: message.text in ["ChatGPT", "Обычный режим", "Генератор шпоргалок", "Поиск ресурсов"])
 async def set_mode(message: Message):
-    # Установить выбранный режим
+    
     user_modes[message.from_user.id] = message.text
     await message.reply(f"Вы выбрали режим: {message.text}")
 
@@ -231,7 +231,7 @@ async def handle_message(message: Message, state: FSMContext):
 
 @router.message(Command('help'))
 async def cmd_help(message: Message):
-    await message.answer('Бог поможет')
+    await message.answer('Бог тебе в помощь')
 
 
 @router.message(Command('register'))
